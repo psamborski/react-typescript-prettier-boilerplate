@@ -16,8 +16,8 @@ export default {
   // Plugins
   plugins: [
     '@trivago/prettier-plugin-sort-imports', // Sort imports
-    // 'prettier-plugin-tailwindcss', // Sort Tailwind CSS classes
     'prettier-plugin-organize-attributes', // Organize attributes in JSX/HTML
+    // 'prettier-plugin-tailwindcss', // Sort Tailwind CSS classes [MUST COME LAST]
   ],
 
   // Sort imports configuration
@@ -33,7 +33,7 @@ export default {
   importOrderSortSpecifiers: true, // Sort import specifiers (e.g., { a, b, c })
 
   // Tailwind CSS configuration
-  // tailwindConfig: './tailwind.config.js', // Path to Tailwind config
+  // tailwindConfig: './tailwind.config.js', // Path to Tailwind config [ONLY FOR Tailwind < v.4]
 
   // Organize attributes configuration
   attributeGroups: [
