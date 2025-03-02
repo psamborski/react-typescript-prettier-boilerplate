@@ -15,6 +15,11 @@ const __dirname = path.dirname(__filename)
 
 /** @type {import('eslint').Linter.Config[]} */
 export default [
+  pluginJs.configs.recommended, // Apply recommended ESLint rules
+  ...tseslint.configs.recommendedTypeChecked, // Enable type-aware linting
+  ...tseslint.configs.stylisticTypeChecked, // Optional: Add stylistic rules
+  ...tseslint.configs.strictTypeChecked, // Enable stricter TypeScript rules
+  prettierConfig, // Disable ESLint rules that conflict with Prettier
   {
     ignores: ['dist', '*.config.js', '*.config.cjs', '*.config.mjs', '.prettierrc.js'], // Ignore the 'dist' directory and config files
   },
@@ -83,9 +88,4 @@ export default [
       },
     },
   },
-  pluginJs.configs.recommended, // Apply recommended ESLint rules
-  ...tseslint.configs.recommendedTypeChecked, // Enable type-aware linting
-  ...tseslint.configs.stylisticTypeChecked, // Optional: Add stylistic rules
-  ...tseslint.configs.strictTypeChecked, // Enable stricter TypeScript rules
-  prettierConfig, // Disable ESLint rules that conflict with Prettier
 ]
